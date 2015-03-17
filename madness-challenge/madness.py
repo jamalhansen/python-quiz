@@ -11,7 +11,7 @@ class Madness(object):
         for score in scores:
             game_counter += 1
 
-            box = score.first("table")
+            box = score.find("table")
             rows = box("tr")
             header = rows[0]
             team1 = rows[1]
@@ -51,8 +51,8 @@ class Madness(object):
         print "******* End Game %d ********" % game_counter
         print ""
 
-
-url = "http://scores.nbcsports.msnbc.com/cbk/scoreboard.asp"
+url = "http://scores.nbcsports.msnbc.com/cbk/scoreboard.asp?day=20150315&conf=000"
+#url = "http://scores.nbcsports.msnbc.com/cbk/scoreboard.asp"
 page = urllib2.urlopen(url)
 soup = BeautifulSoup(page)
 
